@@ -41,7 +41,7 @@
       {
         "language": "pgsqlt",
         "scopeName": "source.pgsqlt",
-        "path": "./syntaxes/sqlt.tmLanguage.json"
+        "path": "./src/syntaxes/sqlt.tmLanguage.json"
       }
     ],
     "commands": [
