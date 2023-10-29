@@ -12,7 +12,7 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "languages", [
+    "languages": [
       {
         "id": "sqlt",
         "aliases": ["SQL Template", "Standard SQL Template"],
