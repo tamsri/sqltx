@@ -27,6 +27,9 @@
         },
         {
             "include": "#cte"
+        },
+        {
+            "include": "#variables"
         }
     ],
     "repository": {
@@ -74,6 +77,10 @@
         "cte": {
             "match": "\\bWITH\\b",
             "name": "keyword.control.cte.sqlt"
+        },
+        "variables": {
+          "match": "\\{\\w+\\}",
+          "name": "keyword.control.variables.sqlt"
         }
     }
 }
