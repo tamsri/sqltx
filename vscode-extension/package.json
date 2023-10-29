@@ -12,6 +12,13 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "languages", [
+      {
+        "id": "sqlt",
+        "aliases": ["SQL Template", "Standard SQL Template"],
+        "extensions": [".sqlt", ".sql"]
+      }
+    ],
     "commands": [
       {
         "command": "sqltx.helloWorld",
