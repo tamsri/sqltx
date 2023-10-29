@@ -6,6 +6,9 @@
       "include": "#cte"
     },
     {
+      "include": "#templateVariables"
+    },
+    {
       "include": "#comments"
     },
     {
@@ -182,7 +185,7 @@
     },
     {
       "comment": "List of SQL99 built-in functions from http://www.oreilly.com/catalog/sqlnut/chapter/ch04.html",
-      "match": "(?i)\\b(AVG|COUNT|MIN|MAX|SUM)(?=\\s*\\()",
+      "match": "(?i)\\b(AVG|COUNT|MIN|MAX|SUM|ROUND)(?=\\s*\\()",
       "name": "support.function.aggregate.sql"
     },
     {
@@ -221,6 +224,11 @@
     }
   ],
   "repository": {
+    "templateVariables": {
+      "begin": "\\{",
+      "end": "\\}",
+      "name": "keyword.variable.template.sqlt"
+    },
     "cte": {
       "begin": "(?i:\\b(with)\\b)",
       "beginCaptures": {
