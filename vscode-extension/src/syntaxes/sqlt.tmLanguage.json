@@ -3,6 +3,9 @@
   "name": "SQL Template",
   "patterns": [
     {
+      "include": "#cte"
+    },
+    {
       "include": "#comments"
     },
     {
@@ -218,6 +221,35 @@
     }
   ],
   "repository": {
+    "cte": {
+      "begin": "(?i:\\b(with)\\b)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.with.sql"
+        }
+      },
+      "end": "(?i:\\b(as)\\b|(?=\\b(select)\\b))",
+      "endCaptures": {
+        "1": {
+          "name": "keyword.other.as.sql"
+        }
+      },
+      "name": "meta.with.sql",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#regexps"
+        },
+        {
+          "include": "#cte"
+        }
+      ]
+    },
     "comments": {
       "patterns": [
         {
