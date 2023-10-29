@@ -21,6 +21,15 @@
         "extensions": [
           ".sqlt"
         ]
+      },
+      {
+        "id": "pgsqlt",
+        "aliases": [
+          "PostgreSQL Template"
+        ],
+        "extensions": [
+          ".pgsqlt"
+        ]
       }
     ],
     "grammars": [
@@ -28,6 +37,11 @@
         "language": "sqlt",
         "scopeName": "source.sqlt",
         "path": "./src/syntaxes/sqlt.tmLanguage.json"
+      },
+      {
+        "language": "pgsqlt",
+        "scopeName": "source.pgsqlt",
+        "path": "./syntaxes/sqlt.tmLanguage.json"
       }
     ],
     "commands": [
