@@ -1,123 +1,140 @@
 {
-  "scopeName": "source.sqlt",
-  "patterns": [
-    {
-      "include": "#comments"
-    },
-    {
-      "include": "#keywords"
-    },
-    {
-      "include": "#strings"
-    },
-    {
-      "include": "#numbers"
-    },
-    {
-      "include": "#operators"
-    },
-    {
-      "include": "#functions"
-    },
-    {
-      "include": "#identifiers"
-    },
-    {
-      "include": "#clauses"
-    },
-    {
-      "include": "#cte"
-    },
-    {
-      "include": "#variables"
-    }
-  ],
-  "repository": {
-    "comments": {
-      "patterns": [
-        {
-          "match": "--.*$",
-          "name": "comment.line.double-dash.sqlt"
-        },
-        {
-          "begin": "/\\*",
-          "end": "\\*/",
-          "name": "comment.block.sqlt"
-        }
-      ]
-    },
-    "keywords": {
-      "match": "\\b(?:SELECT|FROM|WHERE|JOIN|GROUP BY|WITH|LEFT JOIN)\\b",
-      "name": "keyword.sqlt"
-    },
-    "strings": {
-      "match": "'(?:[^'\\\\]|\\\\.)*'",
-      "name": "string.quoted.single.sqlt"
-    },
-    "numbers": {
-      "match": "\\b\\d+\\b",
-      "name": "constant.numeric.sqlt"
-    },
-    "operators": {
-      "match": "\\b(?:=|<|>|\\+|-|\\*|\\/)\\b",
-      "name": "keyword.operator.sqlt"
-    },
-    "functions": {
-      "match": "\\b(?:COUNT|SUM|AVG)\\b",
-      "name": "support.function.aggregate.sqlt"
-    },
-    "identifiers": {
-      "match": "\\b\\w+\\b",
-      "name": "variable.other.sqlt"
-    },
-    "clauses": {
-      "match": "\\b(?:SELECT|FROM|WHERE|JOIN|GROUP BY|WITH|LEFT JOIN)\\b",
-      "name": "keyword.control.sqlt"
-    },
-    "cte": {
-      "begin": "\\bWITH\\s+\\w+\\b",
-      "end": "\\bAS\\b",
-      "name": "keyword.control.cte.sqlt",
-      "beginCaptures": {
-        "0": {
-          "name": "keyword.control.cte.sqlt"
-        }
+    "scopeName": "source.sqlt",
+    "patterns": [
+      {
+        "include": "#comments"
       },
-      "endCaptures": {
-        "0": {
-          "name": "keyword.control.cte.sqlt"
-        }
+      {
+        "include": "#keywords"
       },
-      "patterns": [
-        {
-          "include": "#comments"
+      {
+        "include": "#strings"
+      },
+      {
+        "include": "#numbers"
+      },
+      {
+        "include": "#operators"
+      },
+      {
+        "include": "#identifiers"
+      },
+      {
+        "include": "#cte"
+      },
+      {
+        "include": "#variables"
+      },
+      {
+        "include": "#joins"
+      },
+      {
+        "include": "#exists"
+      },
+      {
+        "include": "#union"
+      },
+      {
+        "include": "#intersect"
+      },
+      {
+        "include": "#except"
+      }
+    ],
+    "repository": {
+      "comments": {
+        "patterns": [
+          {
+            "match": "--.*$",
+            "name": "comment.line.double-dash.sqlt"
+          },
+          {
+            "begin": "/\\*",
+            "end": "\\*/",
+            "name": "comment.block.sqlt"
+          }
+        ]
+      },
+      "keywords": {
+        "match": "\\b(?:SELECT|FROM|WHERE|JOIN|GROUP BY|WITH|LEFT JOIN|RIGHT JOIN|INNER JOIN|FULL OUTER JOIN|CROSS JOIN|ORDER BY|HAVING|ON|AS|DISTINCT|AND|OR|NOT|IN|LIKE|UNION|INTERSECT|EXCEPT|CASE|WHEN|THEN|ELSE|END|CAST|COUNT|SUM|AVG|MIN|MAX|EXISTS)\\b",
+        "name": "keyword.control.sqlt"
+      },
+      "strings": {
+        "match": "'(?:[^'\\\\]|\\\\.)*'",
+        "name": "string.quoted.single.sqlt"
+      },
+      "numbers": {
+        "match": "\\b\\d+\\b",
+        "name": "constant.numeric.sqlt"
+      },
+      "operators": {
+        "match": "\\b(?:=|<|>|\\+|-|\\*|\\/)\\b",
+        "name": "keyword.operator.sqlt"
+      },
+      "identifiers": {
+        "match": "\\b\\w+\\b",
+        "name": "variable.other.sqlt"
+      },
+      "cte": {
+        "begin": "\\bWITH\\s+\\w+\\b",
+        "end": "\\bAS\\b",
+        "name": "keyword.control.cte.sqlt",
+        "beginCaptures": {
+          "0": {
+            "name": "keyword.control.cte.sqlt"
+          }
         },
-        {
-          "include": "#keywords"
+        "endCaptures": {
+          "0": {
+            "name": "keyword.control.cte.sqlt"
+          }
         },
-        {
-          "include": "#strings"
-        },
-        {
-          "include": "#numbers"
-        },
-        {
-          "include": "#operators"
-        },
-        {
-          "include": "#functions"
-        },
-        {
-          "include": "#identifiers"
-        },
-        {
-          "include": "#variables"
-        }
-      ]
-    },
-    "variables": {
-      "match": "\\{\\w+\\}",
-      "name": "keyword.control.variables.sqlt"
+        "patterns": [
+          {
+            "include": "#comments"
+          },
+          {
+            "include": "#strings"
+          },
+          {
+            "include": "#numbers"
+          },
+          {
+            "include": "#operators"
+          },
+          {
+            "include": "#identifiers"
+          },
+          {
+            "include": "#variables"
+          }
+        ]
+      },
+      "variables": {
+        "begin": "\\{",
+        "end": "\\}",
+        "name": "keyword.other.sqlt"
+      },
+      "joins": {
+        "match": "\\b(?:LEFT JOIN|RIGHT JOIN|INNER JOIN|FULL OUTER JOIN|CROSS JOIN)\\b",
+        "name": "keyword.control.joins.sqlt"
+      },
+      "exists": {
+        "match": "\\bEXISTS\\b",
+        "name": "keyword.control.exists.sqlt"
+      },
+      "union": {
+        "match": "\\bUNION(?:\\s+ALL)?\\b",
+        "name": "keyword.control.union.sqlt"
+      },
+      "intersect": {
+        "match": "\\bINTERSECT\\b",
+        "name": "keyword.control.intersect.sqlt"
+      },
+      "except": {
+        "match": "\\bEXCEPT\\b",
+        "name": "keyword.control.except.sqlt"
+      }
     }
   }
-}
+  
