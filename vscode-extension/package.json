@@ -15,8 +15,19 @@
     "languages": [
       {
         "id": "sqlt",
-        "aliases": ["SQL Template", "Standard SQL Template"],
-        "extensions": [".sqlt", ".sql"]
+        "aliases": [
+          "SQL Template"
+        ],
+        "extensions": [
+          ".sqlt"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sqlt",
+        "scopeName": "source.sqlt",
+        "path": "./src/syntaxes/sqlt.tmLanguage.json"
       }
     ],
     "commands": [
